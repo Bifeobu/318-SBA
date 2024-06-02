@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+const fs = require("fs");
 const userRouter = require("./routes/users.js")
 
 app.set("views", "./views")
