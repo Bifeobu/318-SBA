@@ -4,7 +4,7 @@ const PORT = 3000;
 const path = require('path');
 const userRouter = require("./routes/users.js")
 
-app.set("views", path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
