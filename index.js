@@ -8,9 +8,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Express', message: 'Hello!'});
+    res.render('index', { title: 'Express', message: 'Hello!' });
 });
 
+app.get('/about', (req, res) => {
+    res.render('about', { title: 'About', message: 'About Page' });
+});
 // app.engine("template", (filePath, options, callback) => {
 //     fs.readFile(filePath, (err, content) => )
 // })
