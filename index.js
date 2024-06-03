@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.render('about', { title: 'About', message: 'About Page' });
+    res.render('about', { title: 'About', message: 'About Page', content: 'At Express Corp we do our best to keep a great environment for our employees so in return we provide the most optimal service for our clients' });
 });
 
 app.get('/', (req, res) => {
