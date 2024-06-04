@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
 
 //PUT(update user by ID)
 router.put('/:id', (req, res) => {
-    const user = users.find(i => i.id === parseInt(req.params.id));
+    const user = users.find(u => u.id === parseInt(req.params.id));
     if (!user) return res.status(404).send('User not found');
 
     user.name = req.body.name;
@@ -52,6 +52,13 @@ router.put('/:id', (req, res) => {
 });
 
 //DELETE(delete user by ID)
+router.delete('/:id', (req, res) => {
+    const userIndex = users.findIndex(u => u.id === parseInt(req.params.id));
+    if (userIndex === -1) return res.status(404).send('User not found');
+
+    users.splice(userIndex, 1);
+    res.status(204).send();
+});
   
 
 module.exports = router;
