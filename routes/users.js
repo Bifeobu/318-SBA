@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     const user = users.find(u => u.id == parseInt(req.params.id));
   
-    if (user) return res.status(404).send('User not found');
+    if (!user) return res.status(404).send('User not found');
 
     res.json({ user, links });
   });
@@ -43,7 +43,13 @@ router.post('/', (req, res) => {
 });  
 
 //PUT(update user by ID)
+router.put('/:id', (req, res) => {
+    const user = users.find(i => i.id === parseInt(req.params.id));
+    if (!user) return res.status(404).send('User not found');
 
+    user.name = req.body.name;
+    res.json(user);
+});
 
 //DELETE(delete user by ID)
   
