@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
     res.json({ user, links });
   });
 
-//POST
+//POST(create new user)
 router.post('/', (req, res) => {
     const newUser = {
         id: users.length + 1,
@@ -41,6 +41,11 @@ router.post('/', (req, res) => {
     users.push(newItem);
     res.status(201).json(newUser);
 });  
+
+//PUT(update user by ID)
+
+
+//DELETE(delete user by ID)
   
 
 module.exports = router;
