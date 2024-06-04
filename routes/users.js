@@ -3,7 +3,7 @@ const router = express.Router();
 const users = require('../data/users.js');
 
 //GET
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
     res.json(users);
 });
 

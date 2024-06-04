@@ -4,6 +4,7 @@ const PORT = 3000;
 const path = require('path');
 const usersRouter = require("./routes/users.js");
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: true }));
 
@@ -25,6 +26,7 @@ app.get('/about', (req, res) => {
     res.render('about', { title: 'About', message: 'About Page', content: 'At Express Corp we do our best to keep a great environment for our employees so in return we provide the most optimal service for our clients' });
 });
 
+
 app.get('/', (req, res) => {
     console.log("first")
     res.send('<h1>Welcome!<h1>');
@@ -34,4 +36,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is listening on port: ${PORT}`)
 });
-
